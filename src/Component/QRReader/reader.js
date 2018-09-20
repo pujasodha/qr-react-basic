@@ -40,9 +40,9 @@ class Reader extends Component {
             <React.Fragment>
 
                 <div className='header'>
-                    <p>QR Code Scanner - React Based App</p>
+                    <p>QR Code Scanner - React & Node</p>
                 </div>
-
+                <div className ="border"></div>
                 <div id='main'>
                     <div className="qr-reader " >
                         <QrReader
