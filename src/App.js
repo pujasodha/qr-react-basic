@@ -1,33 +1,37 @@
 import React, { Component } from "react";
 import "./App.css"
-import Reader from "./Component/Reader/reader";
+import Reader from "./Component/QRReader";
 
 class App extends Component {
   state = {
-    QRCodeResults: [];
+    QRCodeResults: [],
   }
 
   addResult = (result) => {
     const userWantsResultStored = window.confirm("Would you like to save " + result + "?")
 
-
-    if (userWantsResultsStored) {
+    if (userWantsResultStored) {
       const updatedResultsArray = [...this.state.QRCodeResults, result];
       this.setState({ QRCodeResults: updatedResultsArray });
-    } else {
-      return
     }
-  }
+    else {
+      //debounce function 
+    }
+
+  };
 
   render() {
     return (
-      <React.fragment>
-        
-        <Reader addResult = {this.addResult} results = {this.state.QRCodeResults}/>
+      <React.Fragment>
 
-      </React.fragment>
+        <Reader
+          addResult={this.addResult}
+          results={this.state.QRCodeResults}
+        />
 
+      </React.Fragment>
     );
   }
 }
+
 export default App;
